@@ -8,7 +8,7 @@ last_name: Cheng
 
 # Status emoji
 status:
-  icon: 🟢
+  icon: 
 
 # Is this the primary user of the site?
 superuser: true
@@ -49,6 +49,10 @@ interests:
   - Information Retrieval
 
 education:
+  - area: Computer Science & Information Engineering
+      institution: National Taiwan University
+      date_start: 2024-09-20
+      date_end: 
   - area: Math & Science Gifted Class
     institution: Taipei Municipal Chien Kuo High School
     date_start: 2021-09-01
@@ -131,7 +135,7 @@ skills:
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 
 awards:
-  - title: Distinction Award in The Advanced Programme of Physics
+  - title: Distintion Award, The Advanced Program of Physics
     url: https://www.facebook.com/profile.php?id=100057585484736
     date: '2023-07-20'
     awarder: Department of Physics, National Taiwan University
