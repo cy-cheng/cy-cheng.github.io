@@ -182,7 +182,7 @@ languages:
 
 ---
 
-# About me
+## About me
 
 A student recently graduated from Math and Science Gifted Class, Taipei Municipal Chien Kuo High School. Currently aiming for NUS CS / NTU CSIE.
 I am interested in Robotics and Artificial Intelligence, and I look forward to join labs that delve into related topics in the above-mentioned school.
