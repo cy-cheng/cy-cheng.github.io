@@ -147,7 +147,7 @@ skills:
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 
 awards:
-  - title: Distinction Award@The Advanced Programme of Physics
+  - title: Distinction Award, The Advanced Programme of Physics
     url: https://www.facebook.com/profile.php?id=100057585484736
     date: '2023-07-20'
     awarder: Department of Physics, National Taiwan University
