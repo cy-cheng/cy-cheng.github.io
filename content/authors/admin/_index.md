@@ -50,7 +50,7 @@ interests:
 
 education:
   - area: Math & Science Gifted Class
-    instition: Taipei Municipal Chien Kuo High School
+    institution: Taipei Municipal Chien Kuo High School
     date_start: 2021-09-01
     date_end: 2024-06-04
 
@@ -182,6 +182,7 @@ languages:
 
 ---
 
-About Me
+# About me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+A student recently graduated from Math and Science Gifted Class, Taipei Municipal Chien Kuo High School. Currently aiming for NUS CS / NTU CSIE.
+I am interested in Robotics and Artificial Intelligence, and I look forward to join labs that delve into related topics in the above-mentioned school.
