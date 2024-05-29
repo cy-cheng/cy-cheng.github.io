@@ -17,12 +17,12 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Student
+role: Undergraduate
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Taipei Municipal Chien Kuo High School
-    url: https://www.ck.tp.edu.tw/nss/p/index
+  - name: NTU Computer Science & Information Engineering
+    url: https://www.csie.ntu.edu.tw/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -86,28 +86,16 @@ education:
   #     - lorem ipsum dolor sit amet, consectetur adipiscing elit
   #     - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
+  - position: Academic Director & Academic Executive
+    company_name: INFOR & CKEISC
     company_url: ''
     company_logo: ''
-    date_start: 2021-01-01
-    date_end: ''
-    summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
-    company_url: ''
-    company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+    date_start: 2022-05-18
+    date_end: 2023-06-30
     summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      - Lead a 5-people academic group to organise CS-related courses 
+      - 17 hours of lecture in Algorithms and Information Technology
+      - Organised summercamps with over 50 pupils
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
