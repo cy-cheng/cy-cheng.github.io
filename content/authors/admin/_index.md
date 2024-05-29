@@ -127,6 +127,19 @@ skills:
       - name: Photography
         description: ''
         icon: camera
+  - name: Test
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: Hiking
+        description: ''
+        icon: person-simple-walk
+      - name: Cats
+        description: ''
+        icon: cat
+      - name: Photography
+        description: ''
+        icon: camera
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -134,7 +147,7 @@ skills:
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 
 awards:
-  - title: Distintion Award, The Advanced Program of Physics
+  - title: Distinction Award@The Advanced Programme of Physics
     url: https://www.facebook.com/profile.php?id=100057585484736
     date: '2023-07-20'
     awarder: Department of Physics, National Taiwan University
