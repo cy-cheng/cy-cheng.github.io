@@ -136,19 +136,6 @@ skills:
       - name: Photography
         description: ''
         icon: camera
-  - name: Test
-      color: '#eeac02'
-      color_border: '#f0bf23'
-      items:
-        - name: Hiking
-          description: ''
-          icon: person-simple-walk
-        - name: Cats
-          description: ''
-          icon: cat
-        - name: Photography
-          description: ''
-          icon: camera
 
 # Awards.
 #   Add/remove as many awards below as you like.
