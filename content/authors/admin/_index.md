@@ -50,8 +50,8 @@ interests:
 
 education:
   - area: BSc Computer Science & Information Engineering
-      institution: National Taiwan University
-      date_start: 2024-09-20
+    institution: National Taiwan University
+    date_start: 2024-09-20
   - area: Math & Science Gifted Class
     institution: Taipei Municipal Chien Kuo High School
     date_start: 2021-09-01
