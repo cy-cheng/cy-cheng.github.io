@@ -14,9 +14,9 @@
     
     <item>
       <title>An example preprint / working paper</title>
-      <link>http://localhost:1313/publication/preprint/</link>
+      <link>http://localhost:1313/unused-templates/publication/preprint/</link>
       <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/preprint/</guid>
+      <guid>http://localhost:1313/unused-templates/publication/preprint/</guid>
       <description>&lt;p&gt;This work is driven by the results in my &lt;a href=&#34;http://localhost:1313/publication/conference-paper/&#34;&gt;previous paper&lt;/a&gt; on LLMs.&lt;/p&gt;
 &lt;div class=&#34;flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900&#34;&gt;
 &lt;span class=&#34;pr-3 pt-1 text-primary-600 dark:text-primary-300&#34;&gt;

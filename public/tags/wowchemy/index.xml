@@ -14,9 +14,9 @@
     
     <item>
       <title>🎉 Easily create your own simple yet highly customizable blog</title>
-      <link>http://localhost:1313/post/get-started/</link>
+      <link>http://localhost:1313/unused-templates/notapost/get-started/</link>
       <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/get-started/</guid>
+      <guid>http://localhost:1313/unused-templates/notapost/get-started/</guid>
       <description>&lt;p&gt;Welcome 👋&lt;/p&gt;
 &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ol&gt;
@@ -73,9 +73,9 @@
     
     <item>
       <title>📈 Communicate your results effectively with the best data visualizations</title>
-      <link>http://localhost:1313/post/data-visualization/</link>
+      <link>http://localhost:1313/unused-templates/notapost/data-visualization/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/data-visualization/</guid>
+      <guid>http://localhost:1313/unused-templates/notapost/data-visualization/</guid>
       <description>&lt;p&gt;Wowchemy is designed to give technical content creators a seamless experience. You can focus on the content and Wowchemy handles the rest.&lt;/p&gt;
 &lt;p&gt;Use popular tools such as Plotly, Mermaid, and data frames.&lt;/p&gt;
 &lt;h2 id=&#34;charts&#34;&gt;Charts&lt;/h2&gt;
@@ -86,7 +86,7 @@
 
 
 
-&lt;div id=&#34;chart-243971658&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-247386951&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   async function fetchChartJSON() {
     console.debug(&#39;Hugo Blox fetching chart JSON...&#39;)
@@ -104,7 +104,7 @@
 
       fetchChartJSON().then(chart =&gt; {
         console.debug(&#39;Plotting chart...&#39;)
-        window.Plotly.newPlot(&#39;chart-243971658&#39;, chart.data, chart.layout, {responsive: true});
+        window.Plotly.newPlot(&#39;chart-247386951&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -279,33 +279,33 @@ Crash --&amp;gt; [*]
     
     <item>
       <title>Pandas</title>
-      <link>http://localhost:1313/project/pandas/</link>
+      <link>http://localhost:1313/unused-templates/project/pandas/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/pandas/</guid>
+      <guid>http://localhost:1313/unused-templates/project/pandas/</guid>
       <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PyTorch</title>
-      <link>http://localhost:1313/project/pytorch/</link>
+      <link>http://localhost:1313/unused-templates/project/pytorch/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/pytorch/</guid>
+      <guid>http://localhost:1313/unused-templates/project/pytorch/</guid>
       <description>&lt;p&gt;PyTorch is a Python package that provides tensor computation (like NumPy) with strong GPU acceleration.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>scikit-learn</title>
-      <link>http://localhost:1313/project/scikit/</link>
+      <link>http://localhost:1313/unused-templates/project/scikit/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/scikit/</guid>
+      <guid>http://localhost:1313/unused-templates/project/scikit/</guid>
       <description>&lt;p&gt;scikit-learn is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>✅ Manage your projects</title>
-      <link>http://localhost:1313/post/project-management/</link>
+      <link>http://localhost:1313/unused-templates/notapost/project-management/</link>
       <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/project-management/</guid>
+      <guid>http://localhost:1313/unused-templates/notapost/project-management/</guid>
       <description>&lt;p&gt;Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!&lt;/p&gt;
 &lt;h2 id=&#34;ideation&#34;&gt;Ideation&lt;/h2&gt;
 &lt;p&gt;Wowchemy supports a Markdown extension for mindmaps.&lt;/p&gt;

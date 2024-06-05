@@ -17,11 +17,11 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Undergraduate
+role: Undergrauate @ NTU
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: NTU Computer Science & Information Engineering
+  - name: Computer Science & Information Engineering
     url: https://www.csie.ntu.edu.tw/
 
 # Social network links
@@ -49,7 +49,7 @@ interests:
   - Information Retrieval
 
 education:
-  - area: BSc Computer Science & Information Engineering
+  - area: Undergraduate in Computer Science & Information Engineering
     institution: National Taiwan University
     date_start: 2024-09-20
   - area: Math & Science Gifted Class
@@ -107,39 +107,21 @@ skills:
     items:
       - name: Python
         description: ''
-        icon: code-bracket
-      - name: Data Science
+        icon: /programming-languages/python
+      - name: C++
         description: ''
-        icon: chart-bar
-      - name: SQL
-        description: ''
-        icon: circle-stack
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
+        icon: /programming-languages/c++
+  - name: Languages
     items:
-      - name: Hiking
-        description: ''
-        icon: person-simple-walk
-      - name: Cats
-        description: ''
-        icon: cat
-      - name: Photography
-        description: ''
-        icon: camera
-  - name: Test
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking
-        description: ''
-        icon: person-simple-walk
-      - name: Cats
-        description: ''
-        icon: cat
-      - name: Photography
-        description: ''
-        icon: camera
+      - name: Mandarin
+        description: 'Mother tongue'
+        icon: flags/tw
+      - name: English
+        description: 'IELTS C1'
+        icon: flags/gb
+      - name: German
+        description: 'still learning!'
+        icon: flags/de
 
 # Awards.
 #   Add/remove as many awards below as you like.
