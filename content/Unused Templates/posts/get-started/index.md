@@ -11,10 +11,6 @@ image:
 authors:
   - admin
 
-tags:
-  - Academic
-  - Wowchemy
-  - Markdown
 ---
 
 Welcome 👋

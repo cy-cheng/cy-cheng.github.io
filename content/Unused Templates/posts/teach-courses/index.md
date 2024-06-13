@@ -4,9 +4,6 @@ summary: Embed videos, podcasts, code, LaTeX math, and even test students!
 date: 2023-10-24
 math: true
 tags:
-  - Hugo
-  - Hugo Blox Builder
-  - Markdown
 image:
   caption: 'Embed rich media such as videos and LaTeX math'
 ---
