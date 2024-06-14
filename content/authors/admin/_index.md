@@ -134,7 +134,7 @@ awards:
     date: '2023-07-20'
     awarder: Department of Physics, National Taiwan University
     summary: |
-      I studied university-level Physics and Mathematics during my 10th and 11th grade. I was able to aquire the key concepts of various fields such as Special Relativity and Calculus. By studying dilligently, I finished 2-year programme with flying colours and ultimately received the Distinction Award in both academic years.
+      I studied university-level Physics and Mathematics during my 10th and 11th grade. I was able to aquire the key concepts of various fields such as Special Relativity and Calculus. By studying dilligently, I finished the 2-year programme with flying colours and ultimately received the Distinction Award in both academic years.
 #   - title: Blockchain Fundamentals
 #     url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
 #     date: '2023-07-01'
