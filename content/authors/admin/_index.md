@@ -46,12 +46,12 @@ profiles:
 interests:
   - Robotics
   - Artificial Intelligence
-  - Information Retrieval
+  - Competitive Programming
 
 education:
   - area: Undergraduate in Computer Science & Information Engineering
     institution: National Taiwan University
-    date_start: 2024-09-20
+    date_start: 2024-09-01
   - area: Math & Science Gifted Class
     institution: Taipei Municipal Chien Kuo High School
     date_start: 2021-09-01
@@ -158,5 +158,5 @@ awards:
 
 ## About me
 
-A student recently graduated from Math and Science Gifted Class, Taipei Municipal Chien Kuo High School. Currently aiming for NUS CS / NTU CSIE.
-I am interested in Robotics and Artificial Intelligence, and I look forward to join labs that delve into related topics in the above-mentioned school.
+A student recently graduated from Math and Science Gifted Class, Taipei Municipal Chien Kuo High School. Currently studying at NTU CSIE.
+I am interested in Robotics and Artificial Intelligence, and I look forward to join labs that delve into related topics in the future.
