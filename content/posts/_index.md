@@ -1,4 +1,5 @@
 ---
 title: Posts
-view: article-grid
+view: article-grid 
 ---
+
