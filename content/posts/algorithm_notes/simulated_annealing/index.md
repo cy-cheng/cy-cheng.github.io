@@ -1,7 +1,7 @@
 ---
 title: 模擬退火（Simulated Annealing）
 summary: 一個物理啟發的啟發式演算法
-date: 2024-12-27
+date: 2024-12-25
 math: true
 tags:
   - algorithm
@@ -149,7 +149,9 @@ auto accept = [&](db dE, db T) {
 
 ## 範例
 
-我們以 [P1337 [JSOI2004] 平衡點](https://www.luogu.com.cn/problem/P1337) 為舉例。
+### 經典範例
+
+我們以 [P1337 [JSOI2004] 平衡點](https://www.luogu.com.cn/problem/P1337) 作為一個經典的舉例。
 
 題目敘述：給定你一些桌子上的洞 $(x_i, y_i)$，每個洞會用繩子掛上一個重量為 $w_i$ 的重物，問你將這些繩子的一端綁在一起後，最後連接點會在哪裡（就是如果繩子綁在那裡，那裡所受拉力的合力為 $0$）。
 
@@ -189,7 +191,7 @@ db calc(db x, db y, vector<Weight>& weight) {
 }
 
 // simulated annealing, we will use this function many times
-pair<db, db> solve(const vector<Weight>& weight, db magic) {
+pair<db, db> anneal(const vector<Weight>& weight, db magic) {
     random_device rd;
     mt19937 rng(rd());
 
@@ -223,7 +225,7 @@ int main() {
 
     double x = 325, y = 225;
     for (int i = 0; i < 10; i++) {
-        auto [nx, ny] = solve(weight, randint(rng)); 
+        auto [nx, ny] = anneal(weight, randint(rng)); 
         if (calc(nx, ny, weight) < calc(x, y, weight)) x = nx, y = ny;
     } 
 
@@ -231,7 +233,7 @@ int main() {
 }
 ```
 
-你可能會注意到我們在 $\text{solve}$ 函數裡面多了一個 $\text{magic}$ 參數，這個參數是用來調整我們的接受機制的，這個參數可以篩除 $(\because \text{magic} > 1)$ 比較差的解，也就是說，我們對於解的要求比較嚴格，這樣可以讓我們的粒子更好的探索解空間。
+你可能會注意到我們在 $\text{anneal}$ 函數裡面多了一個 $\text{magic}$ 參數，這個參數是用來調整我們的接受機制的，這個參數可以篩除 $(\because \text{magic} > 1)$ 比較差的解，也就是說，我們對於解的要求比較嚴格，這樣可以讓我們的粒子更好的探索解空間。
 
 順帶一提，
 
@@ -241,11 +243,99 @@ int main() {
 
 而這題的答案則是一個帶權重的費馬點。
 
+
+### 運用在陣列
+
+除了使用在幾何相關的最佳化題目，有些最佳化陣列（排列組合）的問題也可以用模擬退火來解決。
+
+例如 [P4212 外太空旅行](https://www.luogu.com.cn/problem/P4212) 就是一題很適合用模擬退火的題目。
+
+題目敘述希望我們找到一個圖裡的最大團（最大完全子圖），是個 NP-hard 問題，可以很簡單的以模擬退火來解決。
+
+注意到這裡我們要最大化團的大小 $E$，所以找 $\Delta E$ 的時候要反過來。
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+typedef double db;
+
+int calc(const vector<int>& solution, const vector< vector<int> >& graph) {
+    for (int i = 1; i < solution.size(); i++) {
+        for (int j = 0; j < i; j++) {
+            if (!graph[solution[i]][solution[j]]) return i; 
+        }
+    }
+
+    return solution.size();
+}
+
+void anneal(vector<int>& solution, vector< vector<int> >& graph) {
+    random_device rd;
+    mt19937 rng(rd());
+
+    vector<int> tmp = solution;
+    shuffle(tmp.begin(), tmp.end(), rng);
+
+    uniform_int_distribution<int> randint(0, tmp.size() - 1);
+    uniform_real_distribution<db> rand(0, 1);
+
+    int cur = calc(tmp, graph);
+    
+    for (db T = 1e3; T > 1e-10; T *= 0.99) {
+        int a = randint(rng), b = randint(rng);
+
+        swap(tmp[a], tmp[b]);
+        int nxt = calc(tmp, graph);
+
+        if (nxt > cur) {
+            cur = nxt;
+        } else {
+            if (exp((nxt - cur) / T) > rand(rng)) {
+                cur = nxt;
+            } else {
+                swap(tmp[a], tmp[b]);
+            }
+        }
+    }
+
+    if (cur > calc(solution, graph)) solution = tmp;
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    vector< vector<int> > graph(N, vector<int>(N));
+
+    for (int u, v; cin >> u >> v; ) {
+        --u, --v;
+        graph[u][v] = 1;
+        graph[v][u] = 1;
+    }
+
+    vector<int> solution(N);
+    iota(solution.begin(), solution.end(), 0);
+
+    random_device rd;
+    mt19937 rng(rd());
+
+    for (int i = 0; i < 25; i++) {
+        anneal(solution, graph); 
+    }
+
+    cout << calc(solution, graph) << '\n';
+}
+```
+
 ## 什麼時候使用模擬退火
 
 > ~~所有的最佳化問題都可以用模擬退火解決~~
 
-如果你真的想不到怎麼解，你又有很多的檢查時間，你就可以試試看模擬退火。不過，在那之前，請想想有沒有更簡單的解決方法。本質上模擬退火就是在很多山中找出一座山峰，但如果你確定只有一座山峰或只有幾座山峰，你應該考慮三分搜或是爬山演算法（這也是一個類似的隨機演算法）之類的。
+對於在空間中找解的題目，尤其是計算幾何的問題，模擬退火是一個很好的選擇，但可能需要 fine-tune 退火的常數並多做幾次。
+
+除此之外，對於其他要找出最佳值得題目，如果能很快地算出你的解的價值，又沒有什麼正規解的想法，你就可以試試看模擬退火。不過，在那之前，請想想有沒有更簡單的解決方法。本質上模擬退火就是在很多山中找出一座山峰，但如果你確定只有一座山峰或只有幾座山峰，你應該考慮三分搜或是爬山演算法（這也是一個類似的隨機演算法）之類的。
 
 切記，不要吃毒。
 
@@ -255,7 +345,6 @@ int main() {
 - [P5544 [JSOI2016] 炸彈攻擊1](https://www.luogu.com.cn/problem/P5544)
 - [P2503 [HAOI2006] 均分資料](https://www.luogu.com.cn/problem/P2503)
 - [P3936 Coloring](https://www.luogu.com.cn/problem/P3936)
-- [P4212 外太空旅行](https://www.luogu.com.cn/problem/P4212)
 - [USACO 2017 Jan Platinum P3. Subsequence Reversal](https://usaco.org/index.php?page=viewproblem2&cpid=698)
 - [CF 1556H - DIY Tree](https://codeforces.com/contest/1556/problem/H)
 - [CF 1105E - Helping Hiasat](https://codeforces.com/contest/1105/problem/E)
@@ -273,7 +362,7 @@ int main() {
 
 ## 一些小技巧
 
-- 一般來說，我們會在每次降溫之後，都讓我們的粒子多走幾步，這樣可以讓我們的粒子更好的探索解空間。
+- 多走幾步：這跟把鄰居的定義改變一樣，可以讓粒子探索更多可能。
 - 時間剪枝：一直跑直到快超時了在停止，最後輸出當前最好的解。
 
 
