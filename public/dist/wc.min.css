@@ -7353,7 +7353,7 @@ ul.task-list input[type=checkbox]:checked:after {
 @media (min-width:1024px) {
     .hb-sidebar-container {
         top: 4rem;
-        width: 8rem;
+        width: 12rem;
         -ms-flex-negative: 0;
         flex-shrink: 0;
         -ms-flex-item-align: start;

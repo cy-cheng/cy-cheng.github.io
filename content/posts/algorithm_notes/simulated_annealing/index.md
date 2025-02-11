@@ -92,7 +92,7 @@ mt19937 rng(rd());
 
 uniform_real_distribution<db> threshold(0, 1);
 
-double magice = ???; // problem dependent
+double magic = ???; // problem dependent
 
 auto accept = [&](db dE, db T) {
     return dE <= 0 || exp(-dE / T) / magic > threshold(rng);
