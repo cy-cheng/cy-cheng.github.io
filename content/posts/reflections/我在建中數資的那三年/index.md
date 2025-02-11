@@ -4,8 +4,8 @@ summary: 一個在「神的領域」闖蕩三年的冒險者的心得
 date: 2024-06-13
 math: true
 tags:
-  - Reflection
-  - Emotional
+  - reflection
+  - emotional
 image:
   caption: '最頂的一群同學'
 ---

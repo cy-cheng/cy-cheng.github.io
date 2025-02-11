@@ -7,7 +7,6 @@
       "article",
       "aside",
       "audio",
-      "bits/stdc++.h",
       "blockquote",
       "body",
       "br",
@@ -35,7 +34,6 @@
       "iframe",
       "img",
       "input",
-      "int",
       "label",
       "li",
       "line",
@@ -68,7 +66,6 @@
       "title",
       "tr",
       "ul",
-      "weight",
       "|--"
     ],
     "classes": [
@@ -587,7 +584,7 @@
       "about-me",
       "apcs-與資奧初選",
       "callouts",
-      "chart-247953168",
+      "chart-157926384",
       "charts",
       "code",
       "crowd-funded-open-source-software",
