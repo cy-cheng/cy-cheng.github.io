@@ -1650,7 +1650,7 @@ video {
 }
 
 .max-w-screen-xl {
-    max-width: 1280px
+    max-width: 1920px
 }
 
 .flex-auto {
@@ -7353,7 +7353,7 @@ ul.task-list input[type=checkbox]:checked:after {
 @media (min-width:1024px) {
     .hb-sidebar-container {
         top: 4rem;
-        width: 12rem;
+        width: 8rem;
         -ms-flex-negative: 0;
         flex-shrink: 0;
         -ms-flex-item-align: start;
