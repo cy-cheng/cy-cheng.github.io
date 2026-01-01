@@ -1,0 +1,55 @@
+/* Custom CSS for site customizations */
+
+/* Force education blocks to display vertically */
+.resume-biography-3 .education-grid,
+.resume-biography-3 [class*="education"],
+section[class*="education"]>div,
+div[class*="grid"]>div[class*="education"] {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+}
+
+.resume-biography-3 .education-item,
+.resume-biography-3 [class*="education"]>div,
+div[class*="education-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 1.5rem !important;
+}
+
+section .grid-cols-2,
+.resume-biography-3 .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+}
+
+.hb-resume-education .grid,
+.hb-resume-education [class*="grid-cols"] {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Hide Hugo Blox Builder attribution */
+footer [class*="powered"],
+footer a[href*="hugoblox"],
+footer div:has(a[href*="hugoblox"]),
+.footer-attribution,
+[class*="attribution"] {
+    display: none !important;
+}
+
+/* Add spacing between sections */
+.resume-biography-3 {
+    margin-bottom: 4rem !important;
+}
+
+section#posts,
+.collection-section {
+    padding-top: 4rem !important;
+}
+/* Hide reading time in card previews safely */
+div[role="article"] time + span,
+div[role="article"] time + span + span {
+  display: none !important;
+}

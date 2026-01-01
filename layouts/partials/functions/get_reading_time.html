@@ -1,0 +1,38 @@
+{{/* Custom reading time calculation */}}
+{{/* Handles Chinese/CJK and English text separately */}}
+
+{{ $page := .page }}
+{{ $content := $page.Plain }}
+
+{{/* Count CJK characters using Unicode properties */}}
+{{/* Han (Chinese), Hiragana, Katakana, Hangul */}}
+{{ $cjkChars := findRE "\\p{Han}|\\p{Hiragana}|\\p{Katakana}|\\p{Hangul}" $content }}
+{{ $cjkCount := len $cjkChars }}
+
+{{/* Count English words */}}
+{{/* First remove CJK characters to avoid counting them as parts of words */}}
+{{ $englishText := replaceRE "\\p{Han}|\\p{Hiragana}|\\p{Katakana}|\\p{Hangul}" " " $content }}
+{{/* Remove non-word characters and extra spaces */}}
+{{ $englishText = replaceRE "[^a-zA-Z0-9\\s]" "" $englishText }}
+{{ $englishWords := split (trim $englishText " ") " " }}
+{{ $englishWordCount := 0 }}
+{{ range $englishWords }}
+{{ if gt (len .) 0 }}
+{{ $englishWordCount = add $englishWordCount 1 }}
+{{ end }}
+{{ end }}
+
+{{/* Calculate reading time */}}
+{{/* CJK: 500 chars/min (Aligns with Hugo default ~84 mins for 45k chars) */}}
+{{/* English: 200 words/min (Standard) */}}
+{{ $cjkMinutes := div (float $cjkCount) 500.0 }}
+{{ $englishMinutes := div (float $englishWordCount) 200.0 }}
+{{ $totalMinutes := add $cjkMinutes $englishMinutes }}
+
+{{/* Round up to nearest minute, minimum 1 minute */}}
+{{ $readingTime := math.Ceil $totalMinutes }}
+{{ if lt $readingTime 1 }}
+{{ $readingTime = 1 }}
+{{ end }}
+
+{{ return (dict "minutes" $readingTime) }}

@@ -1,0 +1,96 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Cheng Chun Yang
+  given: Chun Yang
+  family: Cheng
+  alternate: ''
+  pronunciation: ''
+  pronouns: ''
+postnominals: []
+status:
+  icon: ""
+role: Undergraduate @ NTU
+bio: |
+  An undergraduate student currently studying at NTU CSIE.
+  I am interested in Robotics and Artificial Intelligence, hopefully I can contribute to the field in the future.
+
+affiliations:
+  - name: Computer Science & Information Engineering
+    url: https://www.csie.ntu.edu.tw/
+
+links:
+  - icon: at-symbol
+    url: mailto:cycheng.dev@gmail.com
+    label: E-mail Me
+  - icon: brands/github
+    url: https://github.com/cy-cheng
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/chun-yang-cheng-55580130a/
+
+interests:
+  - Robotics
+  - Artificial Intelligence
+  - Competitive Programming
+
+education:
+  - degree: Undergraduate in Computer Science & Information Engineering
+    institution: National Taiwan University
+    start: 2024-09-01
+  - degree: Math & Science Gifted Class
+    institution: Taipei Municipal Chien Kuo High School
+    start: 2021-09-01
+    end: 2024-06-04
+
+experience:
+  - role: Academic Director & Academic Executive
+    org: INFOR & CKEISC
+    start: 2022-05-18
+    end: 2023-06-30
+    summary: |
+      - Lead a 5-people academic group to organise CS-related courses 
+      - 17 hours of lecture in Algorithms and Information Technology
+      - Organised summercamps with over 50 pupils
+
+skills:
+  - name: Technical Skills
+    items:
+      - label: Python
+        level: 4
+      - label: C++
+        level: 4
+  - name: Languages
+    items:
+      - label: Mandarin
+        level: 5
+      - label: English
+        level: 4
+      - label: German
+        level: 2
+
+languages:
+  - name: Mandarin
+    level: 5
+    label: Mother tongue
+  - name: English
+    level: 4
+    label: IELTS C1
+  - name: German
+    level: 2
+    label: still learning!
+
+awards:
+  - title: 1st Place, The 9th Young Turing Project
+    awarder: SYSTEX
+    date: "2025-03-08"
+    summary: Under the guidance of Prof. Che Lin, I developed PaTiENZ, a clinical training system for medical students.
+    icon: hero/trophy
+  - title: Silver Award, ICPC Asia-Pacific Regional
+    awarder: Taichung Station
+    date: "2024-11-17"
+  - title: 7th Place, Taiwan Online Programming Contest
+    date: "2024-09-07"
+  - title: Distinction Award, The Advanced Programme of Physics
+    awarder: NTU Physics
+    date: "2023-07-20"
