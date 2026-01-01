@@ -1,0 +1,117 @@
+<script>
+    console.log("DEBUG: Date Fix & Recursive Vacuum Script Loaded");
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // --- Date Fix Logic ---
+        const dateElements = document.querySelectorAll('.resume-biography .text-gray-500.text-sm.mt-2');
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        function formatDate(dateStr) {
+            const parts = dateStr.split('-');
+            if (parts.length !== 3) return dateStr;
+            const y = parts[0];
+            const m = parseInt(parts[1], 10);
+            if (m < 1 || m > 12) return dateStr;
+            return months[m - 1] + ' ' + y;
+        }
+
+        dateElements.forEach(function (el) {
+            const html = el.innerHTML;
+            const matches = [...html.matchAll(/(\d{4})-(\d{2})-(\d{2})/g)];
+
+            if (matches.length > 0) {
+                let start = formatDate(matches[0][0]);
+                let end = "";
+
+                if (matches.length >= 2) {
+                    const endDateStr = matches[1][0];
+                    const endDate = new Date(endDateStr);
+                    const now = new Date();
+                    if (endDate > now) end = "Present";
+                    else end = formatDate(endDateStr);
+                    el.innerHTML = `${start} - ${end}`;
+                } else if (matches.length === 1) {
+                    end = "Present";
+                    el.innerHTML = `${start} - ${end}`;
+                }
+            }
+        });
+
+        // --- Section Hider Logic (Recursive Vacuum) ---
+        const headers = document.querySelectorAll('h1, h2, h3, h4, div');
+
+        function isHidden(node) {
+            return node.style.display === 'none' || getComputedStyle(node).display === 'none';
+        }
+
+        function hasVisibleContent(node) {
+            // Check if node has any visible element children
+            // We ignore text nodes for layout wrappers usually (mostly whitespace)
+            // But let's be careful.
+            for (let child of node.children) {
+                if (!isHidden(child)) {
+                    return true;
+                }
+            }
+            // Check text content - if it has significant text, it's visible content?
+            // Resume sections are block-heavy, so explicit children check is usually enough.
+            // But let's check text length just in case.
+            const text = node.innerText.trim();
+            if (text.length > 0) {
+                // If the text comes from hidden children, innerText should be empty?
+                // Yes, innerText excludes hidden elements.
+                // So if innerText is non-empty, it has visible content.
+                return true;
+            }
+            return false;
+        }
+
+        headers.forEach(function (el) {
+            const text = el.innerText.trim();
+            if (text === "Technical Skills" || text === "Languages" || text === "Skills" || text === "Skills & Hobbies") {
+                console.log("DEBUG: Hiding header and vacuuming up:", text);
+                el.style.display = 'none';
+
+                let current = el.parentElement;
+                // Traverse up to 4 levels to find empty wrappers
+                for (let i = 0; i < 4 && current; i++) {
+                    // Re-check emptiness now that the child is hidden
+                    if (!hasVisibleContent(current)) {
+                        console.log("DEBUG:  Vacuuming empty parent:", current.tagName, current.className);
+                        current.style.display = 'none';
+                        current = current.parentElement;
+                    } else {
+                        // Parent has other visible stuff. Stop.
+                        // Special Case: "flex items-center" wrapper for the title?
+                        // Even if it has an icon (svg), if we wipe the text...
+                        // The svg is a child. so hasVisibleContent returns true (svg is visible).
+                        // But if it's the "Header Icon" next to "Skills", we want to hide it too.
+
+                        // Check if this parent is a "Title Row" (e.g. contains only the title and an icon)?
+                        // And we are hiding the title.
+                        // If classList contains 'flex' and 'items-center', maybe hide it anyway?
+                        // User wants "Skills & Hobbies" gone. This implies the icon too.
+                        // I'll execute a check: if parent contains the hidden header AND is a flex row, hide it?
+                        // Dangerous if it's the main row.
+                        // But usually:
+                        // <div class="flex ..."> <icon> <h3>Skills</h3> </div>
+                        // If we hide h3, icon remains.
+                        // So we should hide the wrapper regardless of text content if it's the title wrapper.
+
+                        if (current.classList.contains('flex') && current.classList.contains('items-center') && i === 0) {
+                            // It's likely the header row. Hide it.
+                            console.log("DEBUG:  Forcing hide of Header Flex Row:", current.className);
+                            current.style.display = 'none';
+                            current = current.parentElement; // Continue finding empty parents
+                            // Since we forced hide, loop continues to check grandparent emptiness.
+                            i = -1; // reset loop count to ensure we check parents of this row
+                            continue;
+                        }
+
+                        break;
+                    }
+                }
+            }
+        });
+    });
+</script>

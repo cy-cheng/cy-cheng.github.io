@@ -1,6 +1,6 @@
 ---
 # Leave the homepage title empty to use the site title
-title: ''
+title: 'CYCheng'
 date: 2022-10-24
 type: landing
 
@@ -19,7 +19,7 @@ sections:
         text: Download CV
         url: uploads/CV.pdf
       headings:
-        about: ''
+        about: 'Who am I'
         education: ''
         interests: ''
     design:
