@@ -42,7 +42,6 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
           run_install: false
 
       - name: Setup Node
@@ -66,6 +65,9 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Generate Pagefind search index
+        run: npx pagefind --site "public"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
